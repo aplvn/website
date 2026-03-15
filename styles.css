@@ -1,53 +1,143 @@
-.wave-background {
-    background-image: url('path/to/your/blue-wave-background.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 100vh;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0047ab 0%, #1e90ff 50%, #87ceeb 100%);
+    background-attachment: fixed;
     color: #333;
+    min-height: 100vh;
 }
 
 .header {
     background-color: rgba(0, 0, 0, 0.7);
     color: white;
-    padding: 20px;
+    padding: 2rem;
     text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+.header p {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+    color: #e0e0e0;
 }
 
 .nav {
     display: flex;
     justify-content: center;
-    margin: 20px 0;
+    gap: 2rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
 }
 
 .nav a {
-    margin: 0 15px;
     text-decoration: none;
     color: white;
-    transition: color 0.3s;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 0.5rem;
 }
 
 .nav a:hover {
     color: #ffcc00;
+    border-bottom-color: #ffcc00;
 }
 
 .section {
-    padding: 50px;
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 3rem;
+    margin: 2rem auto;
+    max-width: 1000px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    animation: slideUp 0.6s ease-out;
+}
+
+.section h2 {
+    font-size: 2rem;
+    color: #0047ab;
+    margin-bottom: 1.5rem;
+    border-bottom: 3px solid #1e90ff;
+    padding-bottom: 1rem;
+}
+
+.section p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+.section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.section li {
+    font-size: 1.1rem;
+    line-height: 2;
+    color: #555;
 }
 
 .footer {
     text-align: center;
-    padding: 20px;
-    background-color: #333;
+    padding: 2rem;
+    background-color: rgba(0, 0, 0, 0.8);
     color: white;
+    margin-top: 4rem;
+    font-size: 0.95rem;
+}
+
+.footer p {
+    margin: 0;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 1.8rem;
+    }
+
+    .header p {
+        font-size: 1rem;
+    }
+
+    .nav {
+        gap: 1rem;
+    }
+
+    .section {
+        padding: 1.5rem;
+        margin: 1rem;
+    }
+
+    .section h2 {
+        font-size: 1.5rem;
+    }
+
+    .section p {
+        font-size: 1rem;
+    }
 }
